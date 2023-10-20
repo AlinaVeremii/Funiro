@@ -1,5 +1,93 @@
-footer {
+.footer {
+
+  &__container {
+  }
+
+  &__body {
+    border-top: 1px solid #d8d8d8;
+    display: grid;
+    grid-template-columns: 250px 1fr 290px;
+    @include adaptiv-value("padding-top", 80, 30, 1);
+    @include adaptiv-value("padding-bottom", 60, 30, 1);
+    @include adaptiv-value("column-gap", 80, 0, 1);
+
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__logo {
+    margin: 0px 0px 16px/24px * 1em 0px;
+  }
+
+  &__text {
+    color: $grayColor;
+    line-height: 150%;
+
+    &:not(:last-child) {
+      margin: 0px 0px 1em 0px;
+    }
+  }
+
+  &__contacts {
+
+  }
+
+  &__menu {
+
+  }
+
+  &__subscribe {
+
+  }
 }
-//====================================================================================================
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    color: $grayColor;
+    transition: color 0.3s ease 0s;
+    line-height: 150%;
+
+    &::before {
+      margin: 0px 8px 0px 0px;
+    }
+
+    &:not(:last-child) {
+      @include adaptiv-value("magrin-bottom", 16, 10, 1);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $orangeColor;
+      }
+    }
+
+  }
+}
+
+//------------------------------------------1.35-----------------------------------------------------------------------------
+.menu-footer {
+  &__column {
+
+  }
+
+  &__title {
+
+  }
+}
+
+
+//=========================1.28===========================================================================
 
 //====================================================================================================
