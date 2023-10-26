@@ -92,8 +92,6 @@ body {
 .page {
   flex: 1 1 auto;
 
-  &__main-slider {
-  }
 }
 
 //===================================================================================================================================
@@ -120,13 +118,13 @@ body {
     padding: 140px 0px 0px 0px;
     position: relative;
     z-index: 2;
-    @media (max-width: $md2+px){
+    @media (max-width: $md2+px) {
       padding: 80px 0px 0px 0px;
     }
-    @media (max-width: $md3+px){
+    @media (max-width: $md3+px) {
       padding: 50px 0px 0px 0px;
     }
-    @media (min-width: $md3+px){
+    @media (min-width: $md2+px) {
       display: flex;
     }
   }
@@ -137,18 +135,61 @@ body {
 
   &__slider {
     flex: 1 1 auto;
+    min-width: 0;
   }
 }
-//=======2.07=======1.56=======
+
+//=============================================================================
 
 .content-main {
+  position: relative;
+  z-index: 5;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: rgba(255, 255, 255, 0.72);
+  @include adaptiv-value("padding-top", 60, 15, 1);
+  @include adaptiv-value("padding-bottom", 60, 15, 1);
+  @media (min-width: $md2+px) {
+    @include adaptiv-value("padding", 60, 1, 1);
+    background: rgba(255, 255, 255, 0.9);
+    @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(31px);
+}
+  }
   &__title {
+    @include adaptiv-value("font-size", 54, 24, 1);
+    font-weight: 700;
+    line-height: 120%;
+    &:not(:last-child) {
+      margin: 0px 0px 16px/56px * 1em 0px;
+    }
   }
 
   &__text {
+    @include adaptiv-value("font-size", 20, 16, 1);
+    color: $grayColor;
+    font-weight: 500;
+    line-height: 150%;
+    &:not(:last-child) {
+      margin: 0px 0px 48px/20px * 1em 0px;
+    }
   }
 
   &__button {
+    font-weight: 600;
+    @include adaptiv-value("min-height", 78, 45, 1);
+    @include adaptiv-value("font-size", 20, 16, 1);
+    background-color: $orangeColor;
+    color: #fff;
+    width: 100%;
+    @media (any-hover: hover) {
+      &:hover{
+      background: #be825c;
+    }
+
+    }
+
   }
 }
 
@@ -179,7 +220,7 @@ body {
 }
 
 .controls-slider-main {
-  &__dotts {
+  &__dots {
   }
 
   &__arrows {
