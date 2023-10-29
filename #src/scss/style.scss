@@ -85,12 +85,17 @@ body {
 @import "popup";
 @import "header";
 @import "footer";
-@import "home";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
   flex: 1 1 auto;
+
+  &__main-slider {
+  }
+
+  &__advantages {
+  }
 
 }
 
@@ -102,7 +107,7 @@ body {
     position: relative;
     @media (min-width: $md2+px) {
       &::before {
-        //content: ;
+        content: "";
         background: #f9f1e7;
         position: absolute;
         top: 0;
@@ -130,16 +135,24 @@ body {
   }
 
   &__content {
+    align-self: flex-start;
     flex: 0 0 494/1240 * 100%;
+    @include adaptiv-value("margin-bottom", 80, 15, 1);
+    @media (max-width: $md2+px) {
+      margin: 0 -15px;
+
+    }
   }
 
   &__slider {
     flex: 1 1 auto;
     min-width: 0;
+    align-self: flex-end;
+    @media (min-width: $md2+px) {
+      padding: 0 0 0 32px;
+    }
   }
 }
-
-//=============================================================================
 
 .content-main {
   position: relative;
@@ -155,12 +168,14 @@ body {
     @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
       background: rgba(255, 255, 255, 0.72);
       backdrop-filter: blur(31px);
-}
+    }
   }
+
   &__title {
     @include adaptiv-value("font-size", 54, 24, 1);
     font-weight: 700;
     line-height: 120%;
+
     &:not(:last-child) {
       margin: 0px 0px 16px/56px * 1em 0px;
     }
@@ -171,6 +186,7 @@ body {
     color: $grayColor;
     font-weight: 500;
     line-height: 150%;
+
     &:not(:last-child) {
       margin: 0px 0px 48px/20px * 1em 0px;
     }
@@ -184,9 +200,9 @@ body {
     color: #fff;
     width: 100%;
     @media (any-hover: hover) {
-      &:hover{
-      background: #be825c;
-    }
+      &:hover {
+        background: #be825c;
+      }
 
     }
 
@@ -194,37 +210,135 @@ body {
 }
 
 .slider-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @media (max-width: $md2+px) {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
   &__controls {
+    align-self: stretch;
+    margin: 0 0 20px 0;
+    @media (max-width: $md2+px) {
+      margin: 10px 0 20px 0;
+    }
+
   }
 
   &__body {
+    overflow: visible;
+    @media (min-width: $md2+px) {
+      @include adaptiv-value("width", 934, 290, 1);
+    }
+    @media (max-width: $md2+px) {
+      margin: 0 -15px;
+    }
   }
 
   &__slide {
+    position: relative;
   }
 
   &__image {
+    padding: 0 0 59.1% 0;
   }
 
   &__content {
+    min-width: 295px;
+    max-width: 300px;
+    overflow: auto;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value("padding", 24, 15, 1);
+    background: rgba(255, 255, 255, 0.9);
+    @media(min-width: $md3+px) {
+      position: absolute;
+      min-width: 350px;
+      @include adaptiv-value("right", 40, 0, 1);
+      @include adaptiv-value("bottom", 40, 0, 1);
+    }
+    @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(31px);
+    }
+
   }
 
   &__title {
+    @include adaptiv-value("font-size", 28, 22, 1);
+    font-weight: 600;
+    line-height: 120%;
+    margin: 0 0 4px/28px * 1em 0;
   }
 
   &__text {
+    line-height: 150%;
+    color: $grayColor;
+
+    &:not(:last-child) {
+      margin: 0 0 8px/16px * 1em 0
+    }
   }
 
   &__price {
+    display: flex;
+    flex-direction: row-reverse;
+    line-height: 150%;
+    align-items: center;
+    font-weight: 600;
+    justify-content: space-between;
+    @include adaptiv-value("font-size", 20, 16, 1);
+
+    &::before {
+      margin: 0 0 0 10px;
+      font-size: 12px;
+    }
   }
 }
 
 .controls-slider-main {
+  display: flex;
+  align-items: center;
+
   &__dots {
+    flex: 1 1 auto;
+    @media (max-width: $md2+px) {
+      padding: 0 20px 0 0;
+    }
+    @media (max-width: $md2+px) {
+      justify-content: center;
+    }
   }
 
   &__arrows {
+    @media (max-width: $md2+px) {
+      display: none;
+    }
   }
 }
+
+//======================================================================================================================
+//.advantages {
+//  @include adaptiv-value("padding-top", 80, 30, 1);
+//  @include adaptiv-value("padding-bottom", 80, 30, 1);
+//  &__conteiner {
+//    display: flex;
+//    flex-wrap: wrap;
+//    justify-content: space-between;
+//
+//  }
+//
+//  &__item {
+//  }
+//
+//  &__icon {
+//  }
+//
+//  &__text {
+//  }
+//}
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
