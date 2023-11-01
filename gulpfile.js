@@ -45,14 +45,14 @@ let path = {
 		css: src_folder + "/scss/style.scss",
 		images: [src_folder + "/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}", "!**/favicon.*"],
 		fonts: src_folder + "/fonts/*.ttf",
-		json: src_folder + "/json/**/*.*"
+		json: src_folder + "/json/*.*"
 	},
 	watch: {
 		html: src_folder + "/**/*.html",
 		js: src_folder + "/**/*.js",
 		css: src_folder + "/scss/**/*.scss",
 		images: src_folder + "/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}",
-		json: src_folder + "/json/**/*.*"
+		json: src_folder + "/json/*.*"
 	},
 	clean: "./" + project_name + "/"
 };
