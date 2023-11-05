@@ -400,6 +400,10 @@ body {
     border: 1px solid $orangeColor;
     min-width: 245px;
 
+    &._hold {
+      opacity: 0.2;
+      cursor: default;
+    }
   }
 }
 
@@ -531,6 +535,11 @@ body {
 
     &:not(:last-child) {
       margin: 0 0 24px 0;
+    }
+
+    &._hold {
+      opacity: 0.2;
+      cursor: default;
     }
   }
 

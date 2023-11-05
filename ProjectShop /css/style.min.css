@@ -555,6 +555,13 @@ textarea.input {
   }
 }
 
+._flyImage._ibg {
+  opacity: 1;
+  position: fixed;
+  z-index: 100;
+  transition: all 1s ease 0s;
+}
+
 ._footer-title {
   font-size: 24px;
   line-height: 120.8333333333%;
@@ -1305,6 +1312,85 @@ body.ie ._ibg img {
   color: #fff;
   font-size: 12px;
 }
+.cart-header__body {
+  background: #f4f5f7;
+  border: 1px solid #e0e0e0;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  padding: 15px;
+  width: 300px;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+  transform: translate(0, 20px);
+}
+._active .cart-header__body {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0);
+}
+@media (max-width: 991.98px) {
+  .cart-header__body {
+    top: 50px;
+  }
+}
+@media (max-width: 767.98px) {
+  .cart-header__body {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+  }
+}
+.cart-list {
+  overflow: auto;
+  max-height: 200px;
+}
+.cart-list__image {
+  flex: 0 0 100px;
+  height: 100px;
+}
+.cart-list__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 0 10px;
+}
+.cart-list__title {
+  color: inherit;
+  font-weight: 600;
+  transition: color 0.3s ease 0s;
+  margin: 0 0 0.3125em 0;
+}
+@media (any-hover: hover) {
+  .cart-list__title:hover {
+    color: #E89F71;
+  }
+}
+.cart-list__quantity {
+  font-size: 14px;
+  margin: 0 0 0.3571428571em 0;
+}
+.cart-list__delete {
+  color: red;
+  font-size: 14px;
+}
+@media (any-hover: hover) {
+  .cart-list__delete:hover {
+    text-decoration: underline;
+  }
+}
+.cart-list__item {
+  display: flex;
+  align-items: flex-start;
+}
+.cart-list__item:not(:last-child) {
+  margin: 0 0 15px;
+}
+
 .icon-menu {
   display: none;
 }
@@ -1931,6 +2017,10 @@ body.ie ._ibg img {
   border: 1px solid #E89F71;
   min-width: 245px;
 }
+.products__more._hold {
+  opacity: 0.2;
+  cursor: default;
+}
 
 .item-product {
   background-color: #f4f5f7;
@@ -2069,6 +2159,10 @@ body.ie ._ibg img {
 }
 .actions-product__button:not(:last-child) {
   margin: 0 0 24px 0;
+}
+.actions-product__button._hold {
+  opacity: 0.2;
+  cursor: default;
 }
 .actions-product__link {
   display: flex;
