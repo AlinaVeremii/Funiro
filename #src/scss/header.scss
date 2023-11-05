@@ -217,7 +217,7 @@
 
   &__sub-list {
     position: relative;
-    background-color: $orangeColor;
+    background-color: rgba(117, 117, 117, 0.87);
     padding: 15px;
     flex: 1 1 100%;
     @media (min-width: $md3+px) {

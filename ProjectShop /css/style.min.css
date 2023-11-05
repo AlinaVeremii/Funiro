@@ -1147,7 +1147,7 @@ body.ie ._ibg img {
 }
 .menu__sub-list {
   position: relative;
-  background-color: #E89F71;
+  background-color: rgba(117, 117, 117, 0.87);
   padding: 15px;
   flex: 1 1 100%;
 }
